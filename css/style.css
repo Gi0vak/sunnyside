@@ -291,40 +291,40 @@ a {
 
 .main-grid-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* grid-template-rows: repeat(3, 1fr); */
-    grid-auto-flow: row;
+    width: 100vw;
+    grid-template-columns: 1fr;
     padding-bottom: 16rem;
 }
 
-@media screen and (max-width:900px) {
-    .main-grid-section {
-        display: flex;
-        flex-direction: column;
-    }
 
-    .block-grid {
-        min-width: 200px;
-        min-height: 300px;
-    }
-}
+
+
+
 
 .block-grid {
     transition: 0.3s ease;
+    width: 100vw;
+
 }
 
-.desc-brand {
-    grid-area: 1/1/2/2;
+@media screen and (min-width:900px) {
+    .main-grid-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .block-grid {
+        transition: 0.3s ease;
+        width: 50vw;
+    }
+
+    .img-brand {
+        grid-column-start: 2;
+    }
+
 }
 
 .img-brand {
-    grid-area: 1/2/2/3;
-    order: -1;
-
-}
-
-.img-audience {
-    grid-area: 2/1/3/2;
+    grid-row-start: 1;
 }
 
 .img-brand img,
@@ -332,22 +332,35 @@ a {
     width: 100%;
 }
 
-.desc-audience {
-    grid-area: 2/2/3/3;
+@media screen and (min-width:900px) {
+    .main-grid-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .block-grid {
+        transition: 0.1s;
+        width: 50vw;
+    }
+
+    .img-brand {
+        grid-column-start: 2;
+    }
+
 }
 
 .desc-graphic {
-    grid-area: 3/1/4/2;
     background-image: url('../img/fruit_2.png');
     background-position: center;
     background-size: cover;
+    min-height: 60rem;
 }
 
 .desc-photography {
-    grid-area: 3/2/4/3;
     background-image: url('../img/fruit_3.jpg');
     background-position: center;
     background-size: cover;
+    min-height: 60rem;
+
 }
 
 
@@ -357,6 +370,12 @@ a {
     place-items: center;
     text-align: center;
     padding-bottom: 6.9rem;
+}
+
+@media screen and (max-width:900px) {
+    .cards-clients {
+        grid-template-columns: 1fr;
+    }
 }
 
 .title-client {
@@ -382,6 +401,14 @@ a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding-bottom: 7.2rem;
+}
+
+@media screen and (max-width:900px) {
+    .pictures {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 7.2rem;
+    }
 }
 
 .pictures figure img {
