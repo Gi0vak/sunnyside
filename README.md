@@ -1,1 +1,1 @@
-Sunnyside is a website with a burger menu, flexbox and grid.
+Sunnyside is a website with a burger menu, using flexbox and grid.
